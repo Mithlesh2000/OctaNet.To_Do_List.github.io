@@ -1,0 +1,270 @@
+/*Font*/
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+/*Variables*/
+:root {
+  --main-text-color: #fff;
+  --main-background-color: #102262;
+  --main-task-color: #9333ea;
+  --main-color-status-not-start: #ff0000;
+  --main-colorstatus-in-progress: #f2cb05;
+  --main-color-done: #3131e2;
+  --main-color-completed: #72a603;
+  --main-color-all: #4281ee;
+  --main-color-alpha: #ffffff70;
+  --main-padding: 10px;
+  --main-border-radius: 10px;
+}
+/*HTML*/
+html {
+  font-size: 16px;
+}
+/*All*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*Body*/
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  background-color: var(--main-background-color);
+  color: var(--main-text-color);
+}
+/*Selection*/
+::-moz-selection {
+  background-color: var(--main-text-color);
+  color: var(--main-background-color);
+}
+::selection {
+  background-color: var(--main-text-color);
+  color: var(--main-background-color);
+}
+/*Scrollbar*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--main-background-color);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-task-color);
+  border-radius: var(--main-border-radius);
+}
+::-webkit-scrollbar-corner {
+  background-color: var(--main-background-color);
+}
+/*Start ToDo List*/
+main .to-do-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 40%;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -20%);
+  -ms-transform: translate(-50%, -20%);
+  transform: translate(-50%, -20%);
+  padding: calc(var(--main-padding) * 2);
+}
+main .to-do-list h1 {
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 2rem;
+}
+main .to-do-list .content-image {
+  margin: 20px 0;
+  width: 100%;
+  height: 150px;
+  border-radius: var(--main-border-radius);
+  background-image: url("images/todo5.jpg");
+  background-size: cover;
+  background-position: center;
+}
+main .to-do-list .content-act {
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+main .to-do-list .content-act .status span {
+  margin-right: 20px;
+  padding: calc(var(--main-padding) / 2) 8px;
+  border-radius: var(--main-border-radius);
+  font-size: 1rem;
+}
+main .to-do-list .content-act .status span:first-child {
+  background-color: var(--main-color-all);
+}
+
+main .to-do-list .content-act .status span:nth-child(2) {
+  background-color: var(--main-color-completed);
+}
+main .to-do-list .content-act .del {
+  background-color: var(--main-task-color);
+}
+main .to-do-list .content-act .status span:last-child i {
+  padding-top: 5px;
+  font-size: 1.2rem;
+}
+main .to-do-list .content-act span.del {
+  width: 50px;
+  height: 50px;
+  padding: calc(var(--main-padding) + (var(--main-padding) / 2));
+  border-radius: 50%;
+  text-align: center;
+}
+main .to-do-list .add-task,
+main .to-do-list .tasks .task {
+  margin: 10px 0;
+  background-color: var(--main-task-color);
+  border-radius: var(--main-border-radius);
+}
+main .to-do-list .add-task {
+  padding: calc(var(--main-padding) / 2);
+}
+main .to-do-list .tasks .task {
+  padding: var(--main-padding);
+}
+main .to-do-list .add-task input {
+  width: 80%;
+  padding: calc(var(--main-padding) + (var(--main-padding) / 2));
+  border: none;
+  outline: none;
+  background-color: var(--main-task-color);
+  color: var(--main-text-color);
+  font-size: 1.2rem;
+}
+main .to-do-list .add-task input::-webkit-input-placeholder {
+  color: #ffffff70;
+}
+main .to-do-list .add-task input::-moz-placeholder {
+  color: #ffffff70;
+}
+main .to-do-list .add-task input:-ms-input-placeholder {
+  color: #ffffff70;
+}
+main .to-do-list .add-task input::-ms-input-placeholder {
+  color: #ffffff70;
+}
+main .to-do-list .add-task input::placeholder {
+  color: #ffffff70;
+}
+main .to-do-list .add-task span {
+  padding: calc(var(--main-padding) + 2px) calc(var(--main-padding) * 2);
+  float: right;
+  border-radius: var(--main-border-radius);
+  background-color: var(--main-background-color);
+  cursor: pointer;
+}
+main .to-do-list .add-task span i {
+  text-align: center;
+}
+main .to-do-list .tasks .task {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+main .to-do-list .tasks .task .cont-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+main .to-do-list .tasks .task .cont-1 i {
+  margin: 0 10px 0 20px;
+}
+main .to-do-list .tasks .task .cont-1 p {
+  font-size: 1.2rem;
+  color: var(--main-text-color);
+}
+main .to-do-list .tasks .task .cont-2 i {
+  margin-right: 20px;
+  cursor: pointer;
+}
+i {
+  font-size: 1.5rem;
+}
+main .to-do-list .no-tasks {
+  width: 100%;
+  background-color: var(--main-color-alpha);
+  border-radius: var(--main-border-radius);
+  padding: var(--main-padding);
+  text-align: center;
+}
+main .to-do-list .no-tasks p {
+  font-size: 1.1rem;
+}
+main .to-do-list .no-tasks p i {
+  font-size: 1rem;
+}
+.completed {
+  text-decoration: line-through;
+}
+.cirl {
+  background-color: var(--main-text-color);
+  border-radius: 50%;
+}
+.nts {
+  background-color: var(--main-color-status-not-start);
+}
+.inpo {
+  background-color: var(--main-colorstatus-in-progress);
+}
+.do {
+  background-color: var(--main-color-done);
+}
+/*Media Query*/
+@media (max-width: 767px) {
+  main .to-do-list {
+    width: 100%;
+  }
+  main .to-do-list .content-act {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  main .to-do-list .content-act .status span {
+    display: inline-block;
+    width: 100%;
+    margin: 5px 0;
+    text-align: center;
+  }
+  main .to-do-list .content-act span {
+    margin-top: 30px;
+  }
+
+  main .to-do-list .add-task span {
+    width: 100%;
+    text-align: center;
+  }
+  main .to-do-list .add-task span i {
+    text-align: center;
+  }
+}
+@media (max-width: 1200px) {
+  main .to-do-list {
+    width: 70%;
+  }
+}
+/*End ToDa List*/
